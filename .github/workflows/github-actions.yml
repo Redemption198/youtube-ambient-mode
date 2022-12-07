@@ -1,0 +1,39 @@
+name: GitHub Pages Deploy
+on:
+  push:
+    branches:
+      - main
+
+env:
+  BASE_URL: /youtube-ambient-mode/
+
+jobs:
+  build-and-deploy:
+    concurrency: ci-${{ github.ref }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Create and Setup .env file 📄
+        run: |
+          touch .env
+          echo NUXT_APP_BASE_URL=${{ env.BASE_URL }} > .env
+          cat .env
+
+      - name: Install and Build 🔧
+        run: |
+          yarn install
+          yarn generate
+
+      - name: Deploy to GitHub Pages 🚀
+        uses: JamesIves/github-pages-deploy-action@v4.4.0
+        with:
+          token: ${{ secrets.REPO_ACCESS }}
+          folder: ./.output/public
+          repository-name: Redemption198/Redemption198.github.io
+          branch: main
+          target-folder: ${{ env.BASE_URL }}
+      
+ 
+      
