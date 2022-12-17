@@ -41,7 +41,8 @@ function startTimer() {
 }
 
 function stopTimer() {
-  if (timer.value) clearInterval(timer.value);
+  if (timer.value) 
+clearInterval(timer.value);
 }
 </script>
 
@@ -85,6 +86,55 @@ function stopTimer() {
           </Transition>
         </div>
         <canvas ref="imageCanvas" class="hidden"></canvas>
+      </div>
+      <div class="mt-4 text-center text-sm text-neutral-400">
+        <p>
+          <a
+            class="underline underline-offset-2"
+            href="https://peach.blender.org/"
+            target="_blank"
+            >Big Buck Bunny</a
+          >
+          is licensed under the
+          <a
+            class="underline underline-offset-2"
+            href="https://creativecommons.org/licenses/by/3.0/"
+            target="_blank"
+            >Creative Commons Attribution 3.0 License</a
+          >
+        </p>
+        <p>
+          &copy; Copyright 2008
+          <a
+            class="underline underline-offset-2"
+            href="https://www.blender.org/about/foundation/"
+            target="_blank"
+            >Blender Foundation</a
+          >
+          /
+          <a
+            class="underline underline-offset-2"
+            href="https://peach.blender.org/"
+            target="_blank"
+            >www.bigbuckbunny.org</a
+          >
+        </p>
+        <p>
+          Clip published on
+          <a
+            class="underline underline-offset-2"
+            href="https://www.npmjs.com/package/big-buck-bunny-1080p"
+            target="_blank"
+            >npm</a
+          >
+          by
+          <a
+            class="underline underline-offset-2"
+            href="https://github.com/covertbert/big-buck-bunny-1080p"
+            target="_blank"
+            >covertbert</a
+          >
+        </p>
       </div>
     </div>
   </div>
