@@ -37,13 +37,17 @@ function startTimer() {
     timer.value = setInterval(() => {
       createImage();
     }, 12000);
-  }, 1000);
+  }, 500);
 }
 
 function stopTimer() {
   if (timer.value) 
 clearInterval(timer.value);
 }
+
+onMounted(() => {
+  videoSource.value.play()
+})
 </script>
 
 <template>
